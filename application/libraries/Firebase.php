@@ -23,6 +23,8 @@ class Firebase {
     
     public function init()
     {
-        return $firebase = (new Factory)->withServiceAccount($this->serviceAccount)->create();
+        //this databaseURL you will find in Firebase Project setting/ Service Accounts
+        //And this is very necessary because you will never connect with the realtime Database codeigniter 3 Projects
+        return $firebase = (new Factory)->withServiceAccount($this->serviceAccount)->withDatabaseUri('https://my-project.firebaseio.com')->create();
     }
 }
